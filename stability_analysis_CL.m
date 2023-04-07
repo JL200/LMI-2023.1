@@ -19,7 +19,7 @@ sistem = ss(A,B,C,D);
 
 step(sistem)
 
-%% discrete system:
+%% CL system:
 
 [x,y] = size(B)
 
