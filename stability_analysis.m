@@ -1,4 +1,4 @@
-%%% AULA 1
+%%% CLASS 1
 %%% João Luiz
 clear all
 close all
@@ -35,7 +35,4 @@ eig(A)
 checkset(LMI)
 
 eig(A'*Ps+Ps*A)
-
-%% discrete system:
-
 
