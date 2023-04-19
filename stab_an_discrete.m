@@ -72,7 +72,10 @@ eig(Q*A'+N'*B')
 eig(Qs)
 
 Q_aux = inv(Qs);
-K = Ns*Q_aux;
-
+K=Ns*Q_aux;
 
 checkset(LMI)
+
+sys = ss(A-B*K,B,C-D*K,D)
+step(sys)
+grid on
