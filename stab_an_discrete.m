@@ -12,13 +12,11 @@ clc
 
 Ts = 0.1;
 
-num = 1;
-% den = [1 -0.1 1];            % unstable
-den = [1 0.1 1];            % estable
+wn = 1;
+xi = 0.25;
 
-G = tf(num,den);
+G = tf(wn^2,[1 2*xi*wn wn^2]);
 Gd = c2d(G,Ts,'zoh')
-% step(Gd)
 
 [b,a] = tfdata(Gd,'v')
 
@@ -26,7 +24,7 @@ Gd = c2d(G,Ts,'zoh')
 sys = ss(A,B,C,D,Ts);
 
 figure;
-step(G)
+step(G);
 hold on
 grid on
 step(sys,'r')
